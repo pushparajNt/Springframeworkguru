@@ -10,21 +10,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sfg.services.BeerService;
-import com.sfg.web.modal.BeerDto;
+import com.sfg.services.CustomerService;
+import com.sfg.web.modal.CustomerDto;
+
+import lombok.Builder;
 
 @RestController
-@RequestMapping("/api/v1/beer")
-public class BeerController {
-	
-	@Autowired
-	private  BeerService beerService;
-	
-	@GetMapping("/{beerId}")
-	public ResponseEntity<BeerDto> getBeer(@PathVariable UUID beerId)
-	{
-		System.out.println("just checking");
-		return new ResponseEntity<>(beerService.getBeerById(beerId),HttpStatus.OK);
-	}
+@RequestMapping("/api/v1/customer")
+public class CustomerController {
 
+	@Autowired
+	private CustomerService customerService;
+	@GetMapping("/{customerId}")
+	public ResponseEntity<CustomerDto> getCustomer(@PathVariable UUID customerId)
+	{
+		return new ResponseEntity<>(customerService.getCustomerById(customerId),HttpStatus.OK);
+	}
 }
