@@ -6,7 +6,10 @@ import org.springframework.stereotype.Service;
 
 import com.sfg.services.BeerService;
 import com.sfg.web.modal.BeerDto;
+
+import lombok.extern.slf4j.Slf4j;
 @Service
+@Slf4j
 public class BeerServiceImpl  implements BeerService {
 
 	@Override
@@ -30,6 +33,12 @@ public class BeerServiceImpl  implements BeerService {
 		
 		//method needs to be implemented in the future
 		
+	}
+
+	@Override
+	public void deleteBeer(UUID id) {
+		// TODO Auto-generated method stub
+		log.debug("Deleteing the beeer");
 	}
 
 	
