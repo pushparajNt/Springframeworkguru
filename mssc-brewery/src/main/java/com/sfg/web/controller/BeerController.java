@@ -31,6 +31,7 @@ public class BeerController {
 	public ResponseEntity<BeerDto> getBeer(@PathVariable UUID beerId)
 	{
 		System.out.println("just checking");
+		System.out.println(beerService.getBeerById(beerId));
 		return new ResponseEntity<>(beerService.getBeerById(beerId),HttpStatus.OK);
 	}
 	
