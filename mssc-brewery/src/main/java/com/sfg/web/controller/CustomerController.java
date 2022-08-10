@@ -44,7 +44,7 @@ public class CustomerController {
 	}
 	
 	@PutMapping("/{customerid}") //just checking
-	public ResponseEntity<CustomerDto> updateCustomer(@PathVariable("customerId") UUID customerId,CustomerDto customerDto)
+	public ResponseEntity<CustomerDto> updateCustomer(@PathVariable("customerid") UUID customerId,CustomerDto customerDto)
 	{
 		customerService.updateCustomer(customerId,customerDto);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
